@@ -8,13 +8,28 @@ public class SyntaxDisaster extends Object {
 	 *	Fix the code found below this block
 	/************************************************/
 
-	public static void main(String [] args) {;}
+	public static void main(String [] args){ //{;}
+	
+	// really not seeing the intent of the code
+		String syntaxIsFun; 
+		int x;
+
 		if (true); {
-			int x = 5
+			x = 5;
 		}
-		int syntaxIsFun; 5;
-		/* The following line prints stuff out, I promise
-		System.out.println("If you can see this message, you've won!);
+		
+		
+// 		if (true); {
+// 			int x = 5
+// 		}
+// 		int syntaxIsFun; 5;
+// 		/* The following line prints stuff out, I promise
+// 		System.out.println("If you can see this message, you've won!);
+//		
+		
+		
+		// The following line prints stuff out, I promise
+		System.out.println("If you can see this message, you've won!");
 	}
 
 	/************************************************
