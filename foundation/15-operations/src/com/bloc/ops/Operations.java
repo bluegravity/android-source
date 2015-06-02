@@ -10,7 +10,8 @@ public class Operations extends Object {
 	 	 *	Place 18 into x
 		/************************************************/
 
-		int x;	
+		int x;
+		x = 18;
 
 		/************************************************
 		 *  ASSIGNMENT:
@@ -18,6 +19,7 @@ public class Operations extends Object {
 		/************************************************/
 
 		int y;
+		y = --x;
 
 		/************************************************
 		 *	ASSIGNMENT:
@@ -25,6 +27,7 @@ public class Operations extends Object {
 		/************************************************/
 
 		int z;
+		z = x*y;
 
 		/************************************************
 		 *	ASSIGNMENT:
@@ -32,6 +35,7 @@ public class Operations extends Object {
 		/************************************************/
 
 		int remainder;
+		remainder = z % 7;
 
 		/************************************************
 		 *	ASSIGNMENT:
@@ -39,6 +43,8 @@ public class Operations extends Object {
 		/************************************************/
 
 		float floaty;
+		floaty = 10f;
+		floaty /= 3; // assuming 3 should be an int
 
 		/************************************************
 		 *	ASSIGNMENT:
@@ -46,12 +52,17 @@ public class Operations extends Object {
 		 *	Then multiply dubs by itself
 		/************************************************/
 
-		double dubs;
+		double dubs = 5.3;
+		dubs *= dubs;
 
 		/************************************************
 		 *	DO NOT MODIFY BELOW THIS CALLOUT
 		/************************************************/
 
+		//
+		// these tests are wrong!
+		//
+		
 		if (!testX(x)) {
 			System.out.print("Sorry, looks like something's wrong with 'x'\n");
 		} else if (!testY(y)) {
