@@ -37,7 +37,7 @@ public class Methods extends Object {
 		 ************************************************/
 
 		// You are free to modify the return statement
-		return false;
+		return !original;
 	}
 
 	/*
@@ -60,6 +60,12 @@ public class Methods extends Object {
 		/************************************************
 		 * Your work goes here
 		 ************************************************/
+		
+		for (int i = 0; i < numbers.length; i++){
+			numbers[i] = numbers[i] * -1;
+		
+		}
+		
 	}
 
 
@@ -84,15 +90,24 @@ public class Methods extends Object {
 	 *
 	 * @param floor The integer to compare each value to
 	 * @param someNumbers The array of integers
-	 * @return an array of booleans
+	 * @return results an array of booleans
 	 */
 	public boolean[] boolsRule(int floor, int[] someNumbers) {
 		/************************************************
 		 * Your work goes here
 		 ************************************************/
-
+		boolean results [] = new boolean [someNumbers.length];
+		
+		for (int i=0; i < someNumbers.length; i++){
+			if(someNumbers[i] >= floor){
+				results[i] = true;
+			}else {
+				results[i] = false;				
+			}
+			
+		}
 		// You are free to modify the return statement
-		return new boolean [0];
+		return results;
 	}
 
 	/*
@@ -118,8 +133,20 @@ public class Methods extends Object {
 		 * Your work goes here
 		 ************************************************/
 
-		// You are free to modify the return statement
-		return new int[2];
+		int [] results = new int [2];
+		
+		/// first value will be first highest and first lowest
+		results[0] = someNumbers[0];
+		results[1] = someNumbers[0];
+		
+		for (int i = 1 ; i < someNumbers.length; i++){
+			// set new value if lower that current lowest
+			results [0] = (someNumbers[i] < results [0]) ? someNumbers[i] : results [0] ;
+			// set new value if higher that current highest
+			results [1] = (someNumbers[i] > results [1]) ? someNumbers[i] : results [1] ;
+		}
+
+		return results;
 	}
 
 
