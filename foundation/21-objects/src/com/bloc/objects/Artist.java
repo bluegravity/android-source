@@ -16,4 +16,12 @@ class Artist extends Object {
 	 *	ASSIGNMENT:
 	 *	Create the Artist constructor
 	/************************************************/
+	
+	public Artist (String firstName, String lastName){
+		
+		mFirstName = firstName;
+		mLastName = lastName;
+	}
+	
+	
 }
