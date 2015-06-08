@@ -20,19 +20,46 @@ public class RecursionUtils extends Object {
 		 * ASSIGNMENT: Implement this method, the return value must change /
 		 ************************************************/
 
-		// I totally cheated and copied this one
+		// This is probably what most people come up with
+		// because the lesson teaches splitting the collection 
+		// into TWO recursive calls. I find that to be very confusing.
 		
 		// base case is ONE number left in List
+//		if (numbers.size() == 1)
+//			return numbers.get(0);
+//
+//		List<Integer> bottomHalf = numbers.subList(0, numbers.size() / 2);
+//		int bottom = findMaxRecursively(bottomHalf);
+//
+//		List<Integer> topHalf = numbers.subList(numbers.size() / 2,
+//				numbers.size());
+//		int top = findMaxRecursively(topHalf);
+//
+//		return top > bottom ? top : bottom;
+		
+		//
+		// A solution using one recursive call stack
+		//
+		
+		// if we are at the bottom of the rabbit hole
+		// pass the lower-most value up
 		if (numbers.size() == 1)
 			return numbers.get(0);
-
-		List<Integer> bottomHalf = numbers.subList(0, numbers.size() / 2);
-		int bottom = findMaxRecursively(bottomHalf);
-
-		List<Integer> topHalf = numbers.subList(numbers.size() / 2,
-				numbers.size());
-		int top = findMaxRecursively(topHalf);
-
-		return top > bottom ? top : bottom;
-	}
+		
+		// System.out.println(numbers.size());
+		
+		// otherwise, get the challenger from the function 
+		// while passing the function a smaller list with the lowest element removed
+		int previousLeftMost = findMaxRecursively(numbers.subList(1, numbers.size()));
+		
+		// System.out.println("comparing: " + previousLeftMost + ":" + numbers.get(0));
+		
+		// compare the challenger coming up from recursion
+		// to the (larger) list's lowest element
+		// return the largest value up through the stack
+		if(previousLeftMost > numbers.get(0))
+			return previousLeftMost;
+		else
+			return numbers.get(0);
+		}
 }
